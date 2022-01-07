@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.link_navbar{
+    background-color: darkblue;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 15px 20px;
+    
+}
+.link_navbar li a {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+}
+.link_navbar li{
+    list-style-type: none;
+}
+.header_banniere{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(./image/films-series-streaming.jpg);
+    height: 400px;
+    background-size: contain;
+    position: relative;
+}
+.search{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+}
+.search input{
+    width: 93%;
+    padding: 7px 0;
+    outline: none;
+    border: none;
+    height: 100%;
+    padding: 10px 30px 10px 10px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px black;
+    position: relative;
+}
+.title1{
+    color: rgb(238, 34, 34);
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.input_search{
+    position: relative;
+}
+.fa{
+    /* position: absolute;
+    right: 10px;
+    top: 45px; */
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.card{
+   
+    padding: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+ }
+ .profile-photo img{
+    width: 100%;;
+ }
+.text-card{
+    margin-top: 10px;
+    word-spacing: 3px;
+    line-height: 1.3em;
+    display: none;
+}
+.card-group{
+    padding: 5px;
+}
+.title_card{
+    cursor: pointer;
+    color: blue;
+}
+
