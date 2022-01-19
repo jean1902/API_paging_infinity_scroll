@@ -179,4 +179,54 @@ function preview() {
   
 
 
+//scroll infinie
 
+function loadPage() {
+  let page = 1;
+
+  window.addEventListener("scroll", (e) => {
+    //console.log(scrollY)
+
+    const { scrollTop , scrollHeight, clientHeight } = document.documentElement;
+    let defiler = scrollHeight - clientHeight;
+
+    if (scrollY == defiler) {
+      page++;
+
+      fetch(
+          `https://api.themoviedb.org/3/movie/popular?api_key=${keys_api}&language=en-US&page=${page}`
+        )
+        .then((resp) => resp.json())
+        .then(data =>{
+          let ElementData = data.results
+
+          for (let i = 0; i < ElementData.length; i++) {
+            card.innerHTML += `
+                  <div class="card-group col-3">
+              <div class="card" onclick="DisplayMo(${ElementData[i].id})">
+                <img src="https://image.tmdb.org/t/p/w500${ElementData[i].poster_path}" class="card-img-top" alt="image1">
+                <div class="card-body">
+                  <a href="#" id="lien">
+                  <h5 class="card-title">${ElementData[i].title}</h5>
+                  </a>
+                  <p class="card-text" style ="display:none">${ElementData[i].overview}</p>
+                  <p class="text-date" style = "display:none" style = "color:red">${ElementData[i].release_date}</p>
+                </div>
+              </div>
+              </div>
+                  `;
+          }
+        })
+      
+    }
+  });
+}
+
+// loadPage();
+
+let timeOut;
+function attente (){
+  timeOut = window.setTimeout(loadPage,1000)
+}
+
+attente ();
